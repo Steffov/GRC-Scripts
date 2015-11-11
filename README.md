@@ -19,6 +19,7 @@ The script will ask you if you install boost by hand in the root directory or no
 
 __How to use__
 
-* Copy the updaste file into the Gridcoin-Research folder.
-* ~/GridcoinResearch chmod 755 update (in the console)
+* Copy the update file into the Gridcoin-Research folder.
+* execute in ~/GridcoinResearch the following command: chmod 755 update
+  * without this the file isn't exucutable
 * ./update (for starting the script)
