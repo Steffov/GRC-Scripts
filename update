@@ -1,14 +1,14 @@
 #!/bin/bash
-git pull > gcv_status
-status=`cat grcskripts_ustatus` #Needed to compare the versions
+git pull > grcs_status
+status=`cat grcs_status` #Needed to compare the versions
 
 	if  [ "$status" == 'Already up-to-date.' ] ; then 
                 echo =====================      
-                echo No Update needed!
+                echo Gridcoin Wallet is up-do-date!
                 echo =====================
 exit
         fi
-                cat "$status" >> grcskripts_vlogs #Copies the git change information into the log file
+                cat "$status" >> grcs_vlogs #Copies the git change information into the log file
 		echo Stating update sequence...
                 echo =====================      
                 read -p "Push enter to close the running Gridcoin wallet."
@@ -33,8 +33,7 @@ exit
                                 make
                                 strip gridcoinresearch
                                 chmod 755 gridcoinresearch
-				clear
-                                echo ================================================================================
+				echo ================================================================================
                                 echo "Update succesfull! Please start the Gridcoin wallet to check." 
                                 echo ================================================================================
                         exit
