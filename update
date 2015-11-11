@@ -1,27 +1,16 @@
 #!/bin/bash
 git pull > gcv_status
-#git fetch --all
-#git reset --hard origin/master > gcv_new
-#echo "|" r$(git rev-list --count HEAD)" (revision)" >> gcv_new
-v_status=`cat gcv_status`
-v_vulog=`gvc_updateversionslog`
-#v_new=`cat gcv_new`     #Needed to compare the versions
-#v_old=`cat gcv_old`     #If the version at git is differend to the one at your machine, the update script will start!
+status=`cat grcskripts_ustatus` #Needed to compare the versions
 
-#        if  [ "$v_new" == "$v_old" ] ; then 
-	 if  [ "$v_status" == 'Already up-to-date.' ] ; then 
+	if  [ "$status" == 'Already up-to-date.' ] ; then 
                 echo =====================      
                 echo No Update needed!
-#               echh Current Version: $v_new
                 echo =====================
 exit
         fi
-                cat "$v_status" >> "$v_vulog"
+                cat "$status" >> grcskripts_vlogs #Copies the git change information into the log file
 		echo Stating update sequence...
                 echo =====================      
-#               echo Current version: $v_old
-#               echo New version: $v_new
-#               echo =====================
                 read -p "Push enter to close the running Gridcoin wallet."
                 killall gridcoinresearch
                 echo "Gridcoin wallet has been closed"
@@ -44,10 +33,7 @@ exit
                                 make
                                 strip gridcoinresearch
                                 chmod 755 gridcoinresearch
-				~/
-				chmod 700 .GridcoinResearch
-                                cp gcv_new gcv_old
-                                clear
+				clear
                                 echo ================================================================================
                                 echo "Update succesfull! Please start the Gridcoin wallet to check." 
                                 echo ================================================================================
