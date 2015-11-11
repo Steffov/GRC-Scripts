@@ -1,0 +1,56 @@
+#!/bin/bash
+git pull > gcv_status
+#git fetch --all
+#git reset --hard origin/master > gcv_new
+#echo "|" r$(git rev-list --count HEAD)" (revision)" >> gcv_new
+v_status=`cat gcv_status`
+v_vulog=`gvc_updateversionslog`
+#v_new=`cat gcv_new`     #Needed to compare the versions
+#v_old=`cat gcv_old`     #If the version at git is differend to the one at your machine, the update script will start!
+
+#        if  [ "$v_new" == "$v_old" ] ; then 
+	 if  [ "$v_status" == 'Already up-to-date.' ] ; then 
+                echo =====================      
+                echo No Update needed!
+#               echh Current Version: $v_new
+                echo =====================
+exit
+        fi
+                cat "$v_status" >> "$v_vulog"
+		echo Stating update sequence...
+                echo =====================      
+#               echo Current version: $v_old
+#               echo New version: $v_new
+#               echo =====================
+                read -p "Push enter to close the running Gridcoin wallet."
+                killall gridcoinresearch
+                echo "Gridcoin wallet has been closed"
+                echo  "Did you install Boost 1.55 by hand in the root directory (j/n)?:"
+                read  boost
+                        if [  $boost == "j" ]; then
+                               sed -i -e '35iBOOST_INCLUDE_PATH = /boost/boost_1_55_0/' \
+                                       -e '36iBOOST_LIB_PATH = /boost/boost_1_55_0/stage/lib/' \
+                                          gridcoinstake.pro
+
+                        fi
+                                sed -i 's/QT += qaxcontainer/CONFIG += qaxcontainer/' gridcoinstake.pro
+                                chmod 755 src/leveldb/build_detect_platform
+                                mkdir src/obj/zerocoin
+                        if [[ -e $(which qmake-qt4) ]]; then
+                                qmake-qt4 'USE_UPNP=-'
+                                else
+                                qmake 'USE_UPNP=-'
+                        fi
+                                make
+                                strip gridcoinresearch
+                                chmod 755 gridcoinresearch
+				~/
+				chmod 700 .GridcoinResearch
+                                cp gcv_new gcv_old
+                                clear
+                                echo ================================================================================
+                                echo "Update succesfull! Please start the Gridcoin wallet to check." 
+                                echo ================================================================================
+                        exit
+
+exit 0
