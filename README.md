@@ -13,7 +13,8 @@ Proofs if the code at git is different to yours and starts only with the update 
 
 __Features__
 
-The script will ask you if you install boost by hand in the root directory or not. If you select by hand (j), it will copy the needed informations automatically in the gridcoinstake.pro. This is needed for successfully compiling.
+* The script will ask you if you install boost by hand in the root directory or not. If you select by hand (j), it will copy the needed informations automatically in the gridcoinstake.pro. This is needed for successfully compiling.
+* Log file which is tracking the changes (grcs_vlogs.txt).
 
 
 
