@@ -1,16 +1,19 @@
 #!/bin/bash
-git pull > grcs_status
-status=`cat grcs_status` #Needed to compare the versions
+vchange=`git pull`
+#version=`git reset --hard origin/master`
 
-	if  [ "$status" == 'Already up-to-date.' ] ; then 
-                echo =====================      
+	if  [ "$vchange" == 'Already up-to-date.' ] ; then 
+                echo ==============================      
                 echo Gridcoin Wallet is up-do-date!
-                echo =====================
+                echo ==============================
+               
 exit
         fi
-                cat "$status" >> grcs_vlogs #Copies the git change information into the log file
+                echo `date` >> grcs_vlogs.txt
+                echo $vchange >> grcs_vlogs.txt #Copies the git change information into the log file
+		echo ==========================     
 		echo Stating update sequence...
-                echo =====================      
+                echo ========================== 
                 read -p "Push enter to close the running Gridcoin wallet."
                 killall gridcoinresearch
                 echo "Gridcoin wallet has been closed"
@@ -34,7 +37,7 @@ exit
                                 strip gridcoinresearch
                                 chmod 755 gridcoinresearch
 				echo ================================================================================
-                                echo "Update succesfull! Please start the Gridcoin wallet to check." 
+                                echo "Update done! Please start the Gridcoin wallet to check." 
                                 echo ================================================================================
                         exit
 
