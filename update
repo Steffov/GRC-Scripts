@@ -12,7 +12,7 @@ exit
                 echo `date` >> grcs_vlogs.txt
                 echo $vchange >> grcs_vlogs.txt #Copies the git change information into the log file
 		echo ==========================     
-		echo Stating update sequence...
+		echo Starting update sequence...
                 echo ========================== 
                 read -p "Push enter to close the running Gridcoin wallet."
                 killall gridcoinresearch
@@ -22,10 +22,10 @@ exit
                         if [  $boost == "j" ]; then
                                sed -i -e '35iBOOST_INCLUDE_PATH = /boost/boost_1_55_0/' \
                                        -e '36iBOOST_LIB_PATH = /boost/boost_1_55_0/stage/lib/' \
-                                          gridcoinstake.pro
+                                          gridcoinresearch.pro
 
                         fi
-                                sed -i 's/QT += qaxcontainer/CONFIG += qaxcontainer/' gridcoinstake.pro
+                                sed -i 's/QT += qaxcontainer/CONFIG += qaxcontainer/' gridcoinresearch.pro
                                 chmod 755 src/leveldb/build_detect_platform
                                 mkdir src/obj/zerocoin
                         if [[ -e $(which qmake-qt4) ]]; then
