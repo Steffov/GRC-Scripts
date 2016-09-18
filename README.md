@@ -1,5 +1,5 @@
 # GRC-Scripts for Debian/ Ubuntu
-Update and install scripts for the QT Gridcoin Wallet *NEW Now install script included!*
+Update and install scripts for the QT Gridcoin Wallet **NEW Now install script included!**
 
 
 ###Update & install script
@@ -12,15 +12,11 @@ Download, install or update newest Gridcoin wallet source code from git and comp
 
 __Features__
 
-<<<<<<< HEAD
 - Installs all tools and programs are needed for compiling (build) the wallet on your machine.
 - Only one file (script) needed for update and installation.
 - Download, copy & unzip the latest snapshot during installation. (For faster synchronization after a fresh installation)
 - The script ask if boost is installed by hand (manual) in the root directory or not. If you select by hand (j), it will copy the needed informations automatically in the gridcoinresearch.pro. (This is needed for successfully compiling / updating.)
-=======
-* The script will ask you if you install boost by hand in the root directory or not. If you select by hand (j), it will copy the needed informations automatically in the gridcoinstake.pro. This is needed for successfully compiling.
-* Log file which is tracking the changes (grcs_vlogs.txt).
->>>>>>> df64f973390c536ca6fe8956863b7e987b0b9ca1
+- Log file which is tracking the changes (grcs_vlogs.txt).
 
 
 
