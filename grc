@@ -17,7 +17,7 @@ read upin
 			echo "**********************************************";
 
 sudo apt-get install git qt-sdk
-	sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip4 libboost1.58-all-dev libqt5webkit5-dev 
+	sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip4 libboost1.58-all-dev libqt5webkit5-dev libminiupnpc-dev
 echo "";
 			echo "******************2/4*************************"
 			echo "* Now getting the source and clone it into ~/*"
