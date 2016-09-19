@@ -33,9 +33,9 @@ sleep 5
 cd ~/Gridcoin-Research
 	sed -i 's/QT += qaxcontainer/CONFIG += qaxcontainer/' gridcoinresearch.pro
 			 if [[ -e $(which qmake-qt4) ]]; then
-                                qmake-qt4 'USE_UPNP=-'
+                                qmake-qt4 gridcoinresearch.pro USE_QRCODE=1 NO_UPGRADE=1
                                 else
-                                qmake 'USE_UPNP=-'
+                                qmake gridcoinresearch.pro USE_QRCODE=1 NO_UPGRADE=1
                         fi
                                 make
 					strip gridcoinresearch
@@ -113,9 +113,9 @@ exit
                         	        mkdir src/obj/zerocoin
 						rm -f build/o.*
                         if [[ -e $(which qmake-qt4) ]]; then
-                                qmake-qt4 'USE_UPNP=-'
-                                else
-                                qmake 'USE_UPNP=-'
+                                qmake-qt4 gridcoinresearch.pro USE_QRCODE=1 NO_UPGRADE=1
+                               else
+                                qmake gridcoinresearch.pro USE_QRCODE=1 NO_UPGRADE=1
                         fi
                                 make
                         		strip gridcoinresearch
