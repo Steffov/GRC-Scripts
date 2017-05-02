@@ -31,6 +31,8 @@ __How to use__
 
 If you find errors, bugs or better solution feel free to contribute!
 
+__Changelog gridly 1.0.1 | 02.04.2017__
+- Added download blocks warning
 
 __Changelog gridly 1.0.0 | 02.04.2017__
 - Changed name from grc to gridly.sh
