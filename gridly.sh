@@ -2,7 +2,7 @@
 #Purpose = Using Gridcoin on a easy way with Linux
 #Created on 15-04-2017
 #Author = Steffov
-#Version 1.0.0
+#Version 1.0.1
 
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
@@ -289,34 +289,54 @@ read -p "Press any key..."
 _downloadblocks ()
 { #Download snapshot from official source
 	clear
-	echo "****************** 1/4 steps ***********************"
-	echo "   Now I backup your current files, download the   "
-	echo "          latest snapshot and unzip these...  "
+	echo "****************** WARNING!! ***********************"
+	echo " If this is the very first time your are using my   "
+	echo " download block function. Please make a backup from "
+	echo " your wallet.dat and your gridcoinresearch.conf by  "
+	echo "           hand BEFORE you continue!!!              "
+	echo "                 In additional..."
+	echo "      Please STOP Gridcoin BEFORE continue!!!       "
 	echo "****************************************************";
-	shopt -s dotglob
-	echo -ne '#                     (0%)\r'
-if [ ! -d "$CDIR" ]; then
-	mkdir $CDIR
-fi
-	mkdir -p $TDIR/$DATE
-	echo -ne '##                     (10%)\r'
-	if [ -d "$CDIR/gridlyb/" ]; then
-		mv $CDIR/gridlyb/* $TDIR/
-	echo -ne '####                   (20%)\r'
-		rm -r $CDIR/gridlyb/
-	fi
-		mv $CDIR/* $TDIR/$DATE
-	echo -ne '########               (40%)\r'
-		_snapshot
-	echo -ne '############           (60%)\r'	
-	mv $TDIR/ $CDIR
-	echo -ne '################       (80%)\r'
-	cp $CDIR/gridlyb/$DATE/gridcoinresearch.conf $CDIR
-	cp $CDIR/gridlyb/$DATE/wallet.dat $CDIR
-	echo -ne '####################   (100%)\r'
+	echo "1. Yes, I did! Keep cool Gridly."
+	echo "2. Ups, I didn't! Please bring me back to main menu! Go Go Go"
+	read -p "Serously, it's important to prevend possible loss! [1 or 2]:" warning
+		case $warning in
+			1 )
+				clear
+				echo "****************** 1/4 steps ***********************"
+				echo "   Now I backup your current files, download the   "
+				echo "          latest snapshot and unzip these...  "
+				echo "  This will take some time.  ->   DON'T INTERRUPT "
+				echo "****************************************************"
+				shopt -s dotglob
+				echo -ne '#                     (0%)\r'
+					if [ ! -d "$CDIR" ]; then
+						mkdir $CDIR
+					fi
+						mkdir -p $TDIR/$DATE
+					echo -ne '##                     (10%)\r'
+					if [ -d "$CDIR/gridlyb/" ]; then
+						mv $CDIR/gridlyb/* $TDIR/
+						echo -ne '####                   (20%)\r'
+							rm -r $CDIR/gridlyb/
+					fi
+							mv $CDIR/* $TDIR/$DATE
+							echo -ne '########               (40%)\r'
+					_snapshot
+								echo -ne '############           (60%)\r'	
+						mv $TDIR/ $CDIR
+									echo -ne '################       (80%)\r'
+							cp $CDIR/gridlyb/$DATE/gridcoinresearch.conf $CDIR
+								cp $CDIR/gridlyb/$DATE/wallet.dat $CDIR
+										echo -ne '####################   (100%)\r'
 	echo -ne '\n'
 	sleep 2
 	clear
+	break;;
+			2 )
+				main_menu;;
+			* ) echo -e "${RED}I can only handle 1) or 2), sorry.${STD}" && sleep 2;;
+	esac
 }
 
 _snapshot ()
