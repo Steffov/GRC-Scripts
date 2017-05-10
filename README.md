@@ -31,13 +31,23 @@ __How to use__
 
 If you find errors, bugs or better solution feel free to contribute!
 
-__Changelog gridly 1.0.2 | 10.05.2017__
+#### Information
+- Debian users should check if the own user is in the sudo group. If not do first...  
+```su [password]```  
+```gpasswd -a [user] sudo```
+- You need aprox. 400 mb free disc space for the compiling tools  
+
+
+### Changelog
+======================
+
+__1.0.2 | 10.05.2017__
 - Changed libzip4 to libzip2 for the Debian install process 
 
-__Changelog gridly 1.0.1 | 02.04.2017__
+__1.0.1 | 02.04.2017__
 - Added download blocks warning
 
-__Changelog gridly 1.0.0 | 02.04.2017__
+__1.0.0 | 02.04.2017__
 - Changed name from grc to gridly.sh
 - Complete overhaul of the script
 - Added menu structure
