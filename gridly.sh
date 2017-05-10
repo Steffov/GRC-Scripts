@@ -2,7 +2,7 @@
 #Purpose = Using Gridcoin on a easy way with Linux
 #Created on 15-04-2017
 #Author = Steffov
-#Version 1.0.1
+Version='1.0.2'
 
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
@@ -24,7 +24,7 @@ function main_menu()
 	echo "************************************************"
         echo "* Hello, I'm Gridly! 			       *"
 	echo "*    Your personal Gridcoin wallet wizard!     *"
-        echo "*       My creator is Steffov           v1.0.0 *"
+        echo "*       My creator is Steffov        v$Version    *"
         echo "************************************************";	
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"	
 	echo "        M A I N - M E N U          "
@@ -88,7 +88,7 @@ _install()
 	echo "   Gridcoin source. Gathering them now for you...    "
 	echo "****************************************************";
 	if [ "$os" == "Debian based" ] ; then
-		sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip4 libboost-atomic-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-program-options-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev qt5-default liblibqt5webkit5-dev
+		sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip2 libboost-atomic-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-program-options-dev libboost-serialization-dev libboost-system-dev libboost-thread-dev qt5-default liblibqt5webkit5-dev
 	elif  [ "$os" == "Arch based" ] ; then
 		sudo pacman -S boost-libs libzip miniupnpc curl boost db git qrencode qt5-base qt5-tools
 	fi
