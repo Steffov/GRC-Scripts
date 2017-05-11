@@ -39,7 +39,9 @@ If you find errors, bugs or better solution feel free to contribute!
 
 
 ### Changelog
-======================
+======================  
+__1.0.3 | 11.05.2017__
+- Slight changes for apt install Debian tools.
 
 __1.0.2 | 10.05.2017__
 - Changed libzip4 to libzip2 for the Debian install process 
