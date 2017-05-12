@@ -35,11 +35,17 @@ If you find errors, bugs or better solution feel free to contribute!
 - Debian users should check if the own user is in the sudo group. If not do first...  
 ```su [password]```  
 ```gpasswd -a [user] sudo```
-- You need aprox. 400 mb free disc space for the compiling tools  
+- **Disc space needed...**
+-- aprox. 450 mb for compiling tools
+-- aprox. 161 MB for Gridcoin source code
+-- Total: aprox. 611 MB
 
 
 ### Changelog
-======================  
+====================== 
+__1.0.4 | 12.05.2017__
+- Added Debian tools for compiling Gridcoin *Hotfix*
+ 
 __1.0.3 | 11.05.2017__
 - Slight changes for apt install Debian tools.
 
