@@ -35,16 +35,17 @@ If you find errors, bugs or better solution feel free to contribute!
 - Debian users should check if the own user is in the sudo group. If not do first...  
 ```su [password]```  
 ```gpasswd -a [user] sudo```
-- **Disc space needed...**
--- aprox. 450 mb for compiling tools
--- aprox. 161 MB for Gridcoin source code
--- Total: aprox. 611 MB
-
+- **Disc space needed on Debian**
+  - aprox. 405 mb for compiling tools
+  - aprox. 161 MB for Gridcoin source code
+  - Total: aprox. 566 MB
+       + in addition aprox. 2,5 GB for Gridcoin Blockchain _(11. Apr 2017)_  
 
 ### Changelog
-====================== 
+======================   
 __1.0.4 | 12.05.2017__
 - Added Debian tools for compiling Gridcoin *Hotfix*
+- Added needed disc space (Debian) in README
  
 __1.0.3 | 11.05.2017__
 - Slight changes for apt install Debian tools.
