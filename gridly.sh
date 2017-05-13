@@ -131,7 +131,7 @@ do
 			2 ) p='d'
 				cd ~/Gridcoin-Research/src
 					mkdir -p obj/zerocoin && chmod +x leveldb/build_detect_platform 
-							make -f makefile.unix USE_UPNP=- -e PIE=1
+							make -f makefile.unix -e PIE=1
 								strip gridcoinresearchd
 									sudo install -m 755 gridcoinresearchd /usr/bin/gridcoinresearchd
 										mkdir ~/.GridcoinResearch
