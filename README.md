@@ -43,6 +43,10 @@ If you find errors, bugs or better solution feel free to contribute!
 
 ### Changelog
 ======================   
+__1.0.5 | 13.05.2017__
+- Under some circumstances the update script re-built the wallet even if no new wallet version was on git *Bugfix*
+- Added PIE=1 on daemon site for more security. Thanks to @Scalextrix
+
 __1.0.4 | 12.05.2017__
 - Added Debian tools for compiling Gridcoin *Hotfix*
 - Added needed disc space (Debian) in README
