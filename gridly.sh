@@ -88,7 +88,7 @@ _install()
 	echo "   Gridcoin source. Gathering them now for you...    "
 	echo "****************************************************";
 	if [ "$os" == "Debian based" ] ; then
-		sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip2 qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools build-essential libboost-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libssl-dev libdb++-dev libminiupnpc-dev
+		sudo apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libqrencode-dev libcurl4-openssl-dev curl libzip-dev libzip2 qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools libboost-all-dev libminiupnpc-dev
 			clear
 	elif  [ "$os" == "Arch based" ] ; then
 		sudo pacman -S boost-libs libzip miniupnpc curl boost db git qrencode qt5-base qt5-tools
@@ -131,7 +131,7 @@ do
 			2 ) p='d'
 				cd ~/Gridcoin-Research/src
 					mkdir -p obj/zerocoin && chmod +x leveldb/build_detect_platform 
-							make -f makefile.unix -e PIE=1
+							make -f makefile.unix
 								strip gridcoinresearchd
 									sudo install -m 755 gridcoinresearchd /usr/bin/gridcoinresearchd
 										mkdir ~/.GridcoinResearch
