@@ -2,7 +2,7 @@
 #Purpose = Using Gridcoin on a easy way with Linux
 #Created on 15-04-2017
 #Author = Steffov
-Version='1.0.4'
+Version='1.0.5'
 
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
@@ -131,7 +131,7 @@ do
 			2 ) p='d'
 				cd ~/Gridcoin-Research/src
 					mkdir -p obj/zerocoin && chmod +x leveldb/build_detect_platform 
-							make -f makefile.unix USE_UPNP=-
+							make -f makefile.unix USE_UPNP=- -e PIE=1
 								strip gridcoinresearchd
 									sudo install -m 755 gridcoinresearchd /usr/bin/gridcoinresearchd
 										mkdir ~/.GridcoinResearch
@@ -225,8 +225,8 @@ _update ()
 { #Update process
 	clear
 	cd ~/Gridcoin-Research
+	git reset --hard origin/master	
 	vchange=`git pull` 
-#	version=`git reset --hard origin/master`
 	if  [ "$vchange" == "Already up-to-date." ] || [ "$vchange" == "Bereits aktuell." ]; then
 		echo "****************************************************"
 		echo "          Gridcoin Wallet is up-do-date!"
