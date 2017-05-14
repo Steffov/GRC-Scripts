@@ -1,4 +1,4 @@
-# Gridly for Debian/ Ubuntu & Arch
+# Gridly for Debian/ Ubuntu, Arch & Rasperry Pi
 Gridly is your personal Gridcoin wallet wizard and the replacement for the former grc script. 
 
 
@@ -12,7 +12,7 @@ Download, install or update newest Gridcoin wallet source code from git and comp
 
 __Features__
 
-- Installs all tools and programs are needed for compiling (build) the wallet on your machine. (approx. 400 MB free disc space needed! Without blockchain.)
+- Installs all tools and programs are needed for compiling (build) the wallet on your machine.
 - Only one file (script) needed for update, installation and download blocks.
 - Download, copy & unzip the latest snapshot during installation and download blocks process. (For faster synchronization)
 - Log file which is tracking the update changes. Saved in ```~/GridcoindResearch/gridlyb/grcs_vlogs.txt```.
@@ -23,29 +23,36 @@ __Features__
 
 __How to use__
 
-* You can use git to get to clone the script to you machine. Or...
+* You can use git to clone the script to you machine: 
+  * ```git clone https://github.com/Steffov/GRC-Scripts.git``` Or...
 * Copy the "gridly.sh" file where you want on your computer.
-* execute in this directory the following command: ```chmod +x gridly.sh```
+  * execute in this directory the following command: ```chmod +x gridly.sh```
   * without this the file isn't executable
-* ```./gridly.sh``` (for starting the script)
-
-If you find errors, bugs or better solution feel free to contribute!
+* ```./gridly.sh``` (to start the script)
 
 #### Information
 - Debian users should check if the own user is in the sudo group. If not do first...  
 ```su [password]```  
 ```gpasswd -a [user] sudo```
 - **Disc space needed on Debian**
-  - aprox. 405 mb for compiling tools
+  - aprox. 550 mb for compiling tools
   - aprox. 161 MB for Gridcoin source code
-  - Total: aprox. 566 MB
+  - Total: aprox. 711 MB
        + in addition aprox. 2,5 GB for Gridcoin Blockchain _(11. Apr 2017)_  
+
+If you find errors, bugs or better solution feel free to contribute!
+
+:+1: If you like my work I appreciate any Gridcoin donation: SEz3cP9aqxe9mZmWv64iNXXPGmxwfd8UsG  
+
+-----------------------------------------------------------------------------------------------------------------------
 
 ### Changelog
 ======================   
 __1.0.5 | 13.05.2017__
 - Under some circumstances the update script re-built the wallet even if no new wallet version was on git *Bugfix*
-- Added PIE=1 on daemon site for more security. Thanks to @Scalextrix
+- ~~Added PIE=1 on daemon site for more security. Thanks to @Scalextrix~~
+- Patched PIE support out due to compiling issues on 64 bit systems
+- Again chnages on Debian tools for compiling Gridcoin *optimization*
 
 __1.0.4 | 12.05.2017__
 - Added Debian tools for compiling Gridcoin *Hotfix*
